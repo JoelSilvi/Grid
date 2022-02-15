@@ -234,3 +234,46 @@ img {
   text-align: center;
   padding-top: 100px;
 }
+
+.grid-order {
+  display: grid;
+  /* Grid 3c x 2r */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.grid-order .item:nth-child(1) {
+  /* El valor por default es 0,  -1 0 1 */
+  order: 1;
+}
+
+.grid-order .item:nth-child(2) {
+  order: 2;
+}
+
+.grid-order .item:nth-child(5) {
+  order: -1;
+}
+
+.grid-align {
+  display: grid;
+  /* Grid 3c x 2r */
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: repeat(2, 200px);
+  /* justify-items alinea en el eje horizontal */
+  justify-items: stretch;
+  justify-items: flex-end;
+  justify-items: flex-start;
+  justify-items: center;
+  /* align-items alinea en el eje vertical */
+  align-items: stretch;
+  align-items: flex-end;
+  align-items: center;
+}
+
+.grid-align .item:nth-child(4) {
+  /* justify-self alinea solo un elemento en el eje horizontal */
+  justify-self: flex-start;
+  /* align-self alinea solo un elemento en el eje vertical */
+  align-self: flex-start;
+}
